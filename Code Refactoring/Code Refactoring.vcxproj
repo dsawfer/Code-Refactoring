@@ -141,7 +141,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="changeComments.c" />
+    <ClCompile Include="checkCorrectNames.c" />
+    <ClCompile Include="functionCallGraph.c" />
     <ClCompile Include="main.c" />
+    <ClCompile Include="nestedLoopsAndLooping.c" />
+    <ClCompile Include="recursion.c" />
     <ClCompile Include="search.c" />
     <ClCompile Include="unusedStaff.c" />
   </ItemGroup>

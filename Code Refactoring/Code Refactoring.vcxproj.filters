@@ -24,6 +24,21 @@
     <ClCompile Include="unusedStaff.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="checkCorrectNames.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="changeComments.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="functionCallGraph.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="recursion.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="nestedLoopsAndLooping.c">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header.h">

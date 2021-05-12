@@ -12,28 +12,28 @@ typedef struct StraightLineEquation
 	double C;
 }Equation;
 
-void party()
+void Party()
 {
-    party();
+    Party();
 }
 
-void firstFunc()
+void FirstFunc()
 {
-    secFunc();
+    SecFunc();
 }
 
-void secFunc()
+void SecFunc()
 {
-    firstFunc();
+    FirstFunc();
 }
 
 int main()
 {
-	int ab_s, Var, cash;
-	/* int money; */
-	Var++;
+	int abs, var, cash;
+	// int money; 
+	var++;
 	int a, b, c;
-	int Name_of_Var;
+	int nameofVar;
 	int a[100]= { 0 };
 	int n, item, count = 0;
 	
@@ -50,19 +50,19 @@ int main()
 			scanf("%d", &a[i]);
 		}
 	
-	/* 1234
-	 5678
-	 91234 */
-	printTitle("Initial array:\n");
+	// 1234
+	// 5678
+	// 91234 
+	PrintTitle("Initial array:\n");
 	for (int i = 0; i < n; i++)
 	{
 		printf("%d ", a[i]);
 	}
 	printf("\n");
-	/* 1234
-	 5678 */printTitle("Target element: ");
-	printTitle("Target element: ");
-	/* printf("okey"); */printf("%d\n", item);
+	// 1234
+	PrintTitle("Target element: ");// 5678 
+	PrintTitle("Target element: ");
+	printf("%d\n", item);// printf("okey"); 
 	for (int i = 0; i < n; i++)
 	{
 		if (a[i] == item) 
@@ -91,8 +91,9 @@ int LinearSearch(int* a)
 	return a;
 }
 
-void printTitle(char* title)
+void PrintTitle(char* title)
 {
 	printf("%s", title);
 }
+
 

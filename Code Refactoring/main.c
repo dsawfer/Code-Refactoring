@@ -9,14 +9,24 @@ int main()
 	char** firstFile;
 	char** secondFile;
 	char** firstHeader;
+	char** thirdFile;
 	int result[sizeOfResult][2] = { 0 };	//в result записываются номеро строк с совпадениями
 
 	firstFile = readFile(1);
 	secondFile = readFile(2);
 	firstHeader = readFile(3);
+	thirdFile = readFile(4);
 
-	//search("for", firstFile, result);	//пример
-	//search("int", secondFile, result);	//пример
+	unusedStaff(firstFile);
+	checkCorrectNames(firstFile);
+	nestedLoopsAndLooping(firstFile);
+	recursion(firstFile);
+	changeComments(firstFile);
+	functionCallGraph(secondFile, thirdFile);
+
+	writeFile(firstFile, 1);
+	writeFile(secondFile, 2);
+	writeFile(firstHeader, 3);
 
 	freeAll(firstFile, secondFile, firstHeader);
 	return 0;
@@ -37,6 +47,9 @@ char** readFile(int mode)
 		break;
 	case 3:
 		input = fopen("files/FirstHeader.h", "r+");
+		break;
+	case 4:
+		input = fopen("files/ThirdFile.c", "r+");
 		break;
 	default:
 		input = 0;
@@ -63,6 +76,33 @@ char** readFile(int mode)
 
 	fclose(input);
 	return tempFile;
+}
+
+writeFile(char** data, int mode)
+{
+	FILE* output;
+	switch (mode)
+	{
+	case 1:
+		output = fopen("files/outFirstFile.c", "wt");
+		break;
+	case 2:
+		output = fopen("files/outSecondFile.c", "wt");
+		break;
+	case 3:
+		output = fopen("files/outFirstHeader.c", "wt");
+		break;
+	default:
+		output = 0;
+		break;
+	}
+
+	int step = 0;
+	while (data[step][0] != -1) {
+		fprintf(output, "%s", data[step]);
+		fprintf(output, "\n");
+		step++;
+	}
 }
 
 freeAll(char** firstFile, char** secondFile, char** firstHeader)

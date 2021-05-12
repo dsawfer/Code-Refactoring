@@ -30,6 +30,7 @@ search(char* needle, char** haystack, int result[][2])
 		if (res != -1) addToResult(step, res, result);
 		step++;
 	}
+	free(offsetTable);
 }
 
 int searchInLine(char* needle, char* haystack, int* offsetTable)
@@ -44,7 +45,10 @@ int searchInLine(char* needle, char* haystack, int* offsetTable)
 		if (point < 0) {
 			int checkFlag = checkWord(haystack, step, strlen(needle));
 			if (checkFlag) return (step + 1);
-			else return -1;
+			else {
+				step += (strlen(needle) + 1);
+				continue;
+			}
 		}
 
 		point = letterExist(haystack[step], needle);
@@ -81,7 +85,7 @@ checkWord(char* haystack, int step, int sizeOfNeedle)
 {
 	char front = haystack[step];
 	char backward = haystack[step + sizeOfNeedle + 1];
-	if ((front == ' ' || front == '\t' || front == '(' || step <= 0) && (backward == ' ' || backward == '\t' || backward == ')' || backward == -1))
+	if ((front == ' ' || front == '\t' || front == '(' || front == '&' || front == '/' || step <= 0) && (backward == ' ' || backward == '\t' || backward == ')' || backward == '(' || backward == ';' || backward == ',' || backward == '+' || backward == -1))
 		return 1;
 	else return 0;
 }
